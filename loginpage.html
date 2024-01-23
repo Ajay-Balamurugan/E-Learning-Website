@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingua-Pad</title>
+    <link rel="stylesheet" href="./css/loginstyle.css">
+
+    <!--GOOGLE FONTS (MONTSERRAT)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="homelink">
+        <a href="index.html"><h4 style="font-size:300%;margin-left: 5%;margin-top: -1%;width:max-content;">LINGUA-PAD</h4></a><br>
+        <h3 style="font-size:small;margin-left: 2%;width: max-content;margin-top: -8%;color:#f75842;">Learn new Languages and unlock new opportunities</h3>
+    </div>
+
+    <h2 id="heading" style="margin-bottom: -5%;margin-left: -5%;">USER LOGIN</h2>
+    
+    <div class="quiz-container" id="quiz">
+        <form name="myform" action="loginaction.php" method="post">
+            <h3 style="color: white;margin-top: 4%;">Username</h3>
+            <input style="margin-top: -20%;" type="text" name="uname" placeholder="Enter Username" required="">
+            <br><br>
+            <h3 style="color: white;">Password</h3>
+            <input type="password" name="pwd" placeholder="Enter Password" required="">
+            <br><br>
+            <input type="submit" style="margin-left:40%;" name="" value="Login">
+            <br><br>
+            <a href="register.html" style="margin-left: 10%;"><p style="color: white;margin-top: -10%;margin-left: 7%">Do not have an account? Register here</p></a>
+        </form>
+        
+    </div>
+    <script src="/loginscript.js"></script>
+</body>

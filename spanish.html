@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingua-Pad</title>
+    <link rel="stylesheet" href="./css/style2.css">
+
+    <!--GOOGLE FONTS (MONTSERRAT)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        function loadVideo(videoId,headingText) {
+          document.getElementById('course-h2').textContent = '';
+          document.getElementById('course-ul').innerHTML = '';
+          document.getElementById('videoPlayer').innerHTML = '';
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/' + videoId;
+          iframe.width = '560';
+          iframe.height = '315';
+          iframe.allowFullscreen = true;
+          document.getElementById('videoPlayer').appendChild(iframe);
+          document.getElementById('heading').textContent = headingText;
+        }
+      </script>
+</head>
+<body>
+    <nav>
+        <div class="container nav__container">
+                <a href="index.html"><h4>LINGUA-PAD</h4></a>
+                <ul class="nav__menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="loginpage.html">Login</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="sidebar">
+          <ul style="text-align: center;margin-top: 60%;">
+            <li><h4 style="color: #f75842">SPANISH</h4></li>
+            <li><a href="#" onclick="loadVideo('kJQjXAVEWt0','Alphabets')">Lecture 1</a></li>
+            <li><a href="#" onclick="loadVideo('oiIvAyX8PEg','Expressions')">Lecture 2</a></li>
+            <li><a href="#" onclick="loadVideo('qIyhRvk7qlk','Numbers')">Lecture 3</a></li>
+            <li><a href="#" onclick="loadVideo('E79n1uLN_IU','Pronouns')">Lecture 4</a></li>
+            <li><a href="#" onclick="loadVideo('7zmhTh1Xx0s','Sentences')">Lecture 5</a></li>
+            <li><a href="spanishquiz.html">QUIZ</a></li>
+          </ul>
+        </div>
+        <div class="content-topic">
+          <h2 id="heading"></h2>
+        </div>
+        <div class="video-container">
+          <div id="videoPlayer"></div>
+        </div>
+        <div class="content-description">
+          <h2 id="course-h2">Learn Spanish</h2>
+          <ul id="course-ul">
+            <li>⚪ Learn the basics of Spanish Langauge</li>
+            <li>⚪ Learn the topics from our wide range of lectures</li>
+            <li>⚪ Take the quiz at he end of the course to evaluate your learnings</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+    <footer> 
+        <div class="container footer__container">
+            <div class="footer__1">
+                <a href="index.html" class="footer_logo"> 
+                <h4>LINGUA-PAD</h4></a>
+                <p>
+                    Learn various Languages and unlock new opportunities
+                </p>
+            </div>
+        
+            <div class="footer__2"> 
+                <h4>Links</h4>
+                <ul class="permainks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loginpage.html">Login</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__4"> 
+                <h4>Contact Us</h4> 
+                <div> 
+                    <p>+91 9945799278</p> 
+                    <p>ajaybalamurugan11@gmail.com</p> 
+                </div>
+            </div>
+        </div> 
+    </footer>
+    </body>
+    </html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingua-Pad</title>
+    <link rel="stylesheet" href="./css/style3.css">
+
+    <!--GOOGLE FONTS (MONTSERRAT)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="homelink">
+        <a href="index.html"><h4>LINGUA-PAD</h4></a>
+    </div>
+
+    <h2 id="heading">FRENCH QUIZ</h2>
+    
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question">Question Text</h2>
+            <ul>
+                <!--
+                <li>
+                    <input type="text" name="username" id="u" class="username">
+                    <label for="u" label="u_text">Answer</label>
+                </li>
+                -->
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text">Answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text">Answer</label>
+                </li>
+            </ul>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+    <script>
+		const quizData = [
+    {
+        question: " What is the French word for the number 'three'?", 
+    a: "un",  
+    b: "deux",   
+    c: "trois",  
+    d: "quatre",  
+    correct: "c", 
+    }, 
+    {
+    question: "Which pronoun in French means 'you'?",
+    a: "il",
+    b: "elle",
+    c: "tu",
+    d: "nous",
+    correct: "c",
+    }, 
+    {
+    question: "What is the French word for 'cat'?", 
+    a: "Chien",
+    b: "Chat", 
+    c: "Oiseau",
+    d: "Cheval",
+    correct: "b",
+    },
+    {
+        question: "How do you say 'Hello' in French?", 
+        a: "Au revoir",
+        b: "Bonjour", 
+        c: "Merci",
+        d: "Excusez-moi",
+        correct: "b",
+    },
+    {
+        question: "Which phrase is used to say 'Thank you' in French?", 
+        a: "Pardon",
+        b: "Merci", 
+        c: "Excusez-moi",
+        d: "S'il vous plaît",
+        correct: "b",
+    },
+
+];
+
+const quiz = document.getElementById('quiz');
+const answerEls = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const submitBtn = document.getElementById('submit');
+
+currentQuiz = 0
+score=0
+
+loadQuiz()
+
+function loadQuiz() {
+
+    deselectAnswers()
+
+    const currentQuizData = quizData[currentQuiz]
+
+    questionEl.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+
+}
+
+function deselectAnswers () {
+answerEls.forEach(answerEl  => answerEl.checked = false)
+}
+
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEl => {
+    if(answerEl.checked) {
+    answer = answerEl.id
+    }
+    })
+    return answer
+    }
+    
+
+    submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    if(answer) {
+        if(answer == quizData[currentQuiz].correct) {
+            score++
+        }
+    
+        currentQuiz++
+    
+        if (currentQuiz < quizData.length) {
+        loadQuiz()
+        } else{
+        quiz.innerHTML = `
+        <h3>You Answered ${score}/5 questions correctly</h3>
+        <button onclick="location.reload()">Reload</button>
+        `
+        }
+    }
+    
+})
+
+    </script>
+</body>
